@@ -1,0 +1,35 @@
+ul {
+	list-style: none;
+}
+
+li {
+	padding: 5px;
+}
+
+.submit-button {
+	background: #2c3e50;
+	color: #f9ca24;
+	border: 2px solid #2c3e50;
+	padding: 5px;
+	border-radius: 25%;
+	width: 5em;
+	font-size: 1.2em;
+	font-weight: 600;
+	text-align: center;
+	box-shadow: 0 5px #999;
+	cursor: pointer;
+}
+
+.submit-button:active {
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+	background: #130f40;
+	color: #f0932b;
+}
+
+/* .form-container {
+	width: 100%;
+	margin: auto;
+	margin-right: 200px; 
+	background: chartreuse;
+} */

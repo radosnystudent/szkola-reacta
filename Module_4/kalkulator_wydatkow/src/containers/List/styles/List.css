@@ -1,0 +1,27 @@
+.grid-container {
+	width: 100%;
+	margin: auto;
+	margin-top: 50px;
+	display: inline-grid;
+	grid-template-columns: auto auto;
+	column-gap: 2em;
+}
+
+.grid-item {
+	padding: 10px;
+	text-align: center;
+	min-height: 200px;
+}
+
+ul {
+	text-align: center;
+	list-style: inside;
+}
+.icon-button {
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.icon-button:hover {
+	color: #ea2027;
+}
