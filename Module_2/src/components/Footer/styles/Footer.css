@@ -1,0 +1,25 @@
+.full-text {
+    padding: 15px;
+    text-align: justify;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: #dff9fb;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-icon {
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+.footer-element-left {
+    margin-left: 10px;
+}
+
+.footer-element-right {
+    margin-right: 10px;
+}

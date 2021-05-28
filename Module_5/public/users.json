@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Helena",
+            "surname": "Nowak",
+            "age": 38
+        },
+        {
+            "id": 2,
+            "name": "Norbert",
+            "surname": "Hubert",
+            "age": 22
+        },
+        {
+            "id": 3,
+            "name": "Piotr",
+            "surname": "Kowalski",
+            "age": 31
+        },
+        {
+            "id": 4,
+            "name": "Róża",
+            "surname": "Rezenda",
+            "age": 28
+        },
+        {
+            "id": 5,
+            "name": "Maja",
+            "surname": "Popiel",
+            "age": 27
+        },
+        {
+            "id": 6,
+            "name": "Kinga",
+            "surname": "Berzecka",
+            "age": 25
+        }
+    ]
+}

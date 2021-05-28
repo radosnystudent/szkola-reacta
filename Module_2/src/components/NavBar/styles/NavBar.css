@@ -1,0 +1,39 @@
+.my-navbar {
+    display: grid;
+    /* grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto; */
+    grid-template-areas: "logo title myIcon" "logo date myIcon";
+    column-gap: 15px;
+    padding: 20px;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.navbar-text {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: white;
+}
+
+.title {
+    grid-area: title;
+    text-align: left;
+
+    font-size: 24px;
+}
+.date {
+    grid-area: date;
+    text-align: justify;
+}
+
+.myIcon {
+    grid-area: myIcon;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+.item {
+    grid-area: item;
+}

@@ -1,0 +1,8 @@
+.menu-navbar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    width: 100%;
+    max-height: fit-content;
+    background: #30336b;
+}

@@ -1,0 +1,42 @@
+.my-button {
+    background: #2c3e50;
+    color: #f9ca24;
+    border: 2px solid #2c3e50;
+    padding: 5px;
+    border-radius: 25%;
+    max-width: 200px;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 5px #999;
+    cursor: pointer;
+}
+
+.my-button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    background: #130f40;
+    color: #f0932b;
+}
+
+.menu-button {
+    padding: 10px;
+}
+
+.dialogbox-button {
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+
+    background: inherit;
+    font-weight: 600;
+    color: rgb(72, 180, 223);
+    outline: none;
+    cursor: pointer;
+}
+
+.dialogbox-button:hover {
+    background-color: rgb(126, 126, 126);
+    color: white;
+}

@@ -1,0 +1,14 @@
+.card {
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    width: fit-content;
+    max-width: 400px;
+    height: auto;
+    background: gray;
+    border-radius: 25px;
+}
+
+.image-container {
+    max-width: 400px;
+}

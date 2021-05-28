@@ -1,0 +1,9 @@
+.nav-link {
+    text-decoration: inherit;
+    color: white;
+}
+
+.selected {
+    color: red;
+    text-decoration: underline;
+}

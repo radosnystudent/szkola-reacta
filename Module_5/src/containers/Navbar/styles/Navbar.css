@@ -1,0 +1,53 @@
+.menu-icon-container {
+    height: 100%;
+    width: 50px;
+    background: #111;
+    position: fixed;
+    transition: 0.5s;
+    top: 0;
+    left: 0;
+}
+
+.my-navbar {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    background: #111;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+    color: white;
+}
+
+.close-button:hover {
+    color: rgb(72, 180, 223);
+}
+
+.menu-button {
+    font-weight: 900;
+    font-size: 25px;
+    color: #6197cc;
+}
+
+.menu-button:hover {
+    color: rgb(255, 255, 255);
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 2px;
+}

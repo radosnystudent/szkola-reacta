@@ -1,0 +1,20 @@
+.user-container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.user-content {
+    margin: auto;
+    text-align: center;
+    max-width: 300px;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    border: 4px solid black;
+    background: cornsilk;
+}
+
+.button-wrapper {
+    padding: 20px;
+}
