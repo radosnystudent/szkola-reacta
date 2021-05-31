@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+
+import getRandomUsers from "./api/user";
+import Loading from "./components/Loading/Loading";
+import UserContainer from "./components/User/UserContainer";
+import UserDetails from "./components/User/UserDetails";
+import "./App.scss";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [users, setUsers] = useState({});
+
+    useEffect(() => {
+        getRandomUsers()
+            .then((data) => {
+                setUsers(data);
+            })
+            .catch((error) => console.log(error, " JSON error"));
+    }, []);
+    return (
+        <>
+            <Router>
+                <div className="app-container">
+                    <Switch>
+                        <Route path="/users:userId" exact>
+                            <UserDetails users={users} />
+                        </Route>
+                        <Route path="/users">
+                            <UserContainer users={users} />
+                        </Route>
+                        <Route path="/">
+                            <Loading />
+                        </Route>
+                    </Switch>
+                </div>
+            </Router>
+        </>
+    );
 }
 
 export default App;
