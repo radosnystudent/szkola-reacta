@@ -7,3 +7,12 @@
 
     overflow: hidden;
 }
+
+.user-content {
+    max-width: 500px;
+    margin: 2rem;
+    background-color: #182c61;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5s);
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+}

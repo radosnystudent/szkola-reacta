@@ -9,7 +9,7 @@ export default function UserInfo({ userData }) {
             </div>
             <div className="user-information-break"></div>
             <div className="user-information">
-                <p className="user-information-title">Addres:</p>
+                <p className="user-information-title">Address:</p>
                 <p className="user-information-content">{userData.address}</p>
             </div>
             <div className="user-information-break"></div>

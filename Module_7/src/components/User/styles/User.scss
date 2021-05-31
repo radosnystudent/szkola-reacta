@@ -4,7 +4,8 @@ $whiteColor: #fff;
 $sarawakWhitePepperColor: #f8efba;
 
 .user-content {
-    cursor: pointer;
+    max-width: 500px;
+    // cursor: pointer;
     margin: 2rem;
     background-color: #182c61;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5s);

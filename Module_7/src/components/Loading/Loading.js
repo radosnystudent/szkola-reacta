@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 
 import "./styles/Loading.scss";
 
@@ -19,11 +19,7 @@ export default function Loading() {
                         />
                     </svg>
                 </div>
-                <div>
-                    <Link className="mylink" to="/users">
-                        Users
-                    </Link>
-                </div>
+                <Button />
             </div>
         </>
     );

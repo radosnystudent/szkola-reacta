@@ -9,13 +9,17 @@ export default function UserContainer({ users }) {
                 users.length > 0 &&
                 users.map((user, index) => {
                     return (
-                        <Link
-                            style={{ textDecoration: "none" }}
-                            to={user.login.uuid}
-                            key={index}
-                        >
-                            <User data={user} />
-                        </Link>
+                        <div className="user-content" key={index}>
+                            <Link
+                                style={{
+                                    textDecoration: "none",
+                                    cursor: "pointer",
+                                }}
+                                to={`/users/${user.login.uuid}`}
+                            >
+                                <User data={user} />
+                            </Link>
+                        </div>
                     );
                 })}
         </div>

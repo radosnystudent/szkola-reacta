@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import Loading from "../Loading/Loading";
 import UserInfo from "./UserInformation";
 
 import "./styles/User.scss";
@@ -43,7 +42,7 @@ export default function User({ data }) {
     return (
         <div>
             {userData ? (
-                <div className="user-content">
+                <div>
                     <div className="user-header">
                         <img
                             alt={`${userData.name} ${userData.surname} profile`}
@@ -59,7 +58,7 @@ export default function User({ data }) {
                     </div>
                 </div>
             ) : (
-                <Loading />
+                <div>Loading..</div>
             )}
         </div>
     );
