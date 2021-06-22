@@ -1,0 +1,100 @@
+@import url("http://fonts.googleapis.com/css?family=Akaya+Telivigala&subset=latin,latin-ext");
+
+$fontFamily: 'Akaya Telivigala', sans-serif;
+
+.App {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    min-height: 100vh;
+    background-color: #30336b;
+    width: 100%;
+    // 
+}
+
+.page-title {
+    font-size: 64px;
+    font-family: $fontFamily;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.mybtn {
+    font-family: $fontFamily;
+    font-weight: bold;
+    font-size: 24px;
+
+    padding: 10px;
+    border-radius: 10px;
+    border: 4px solid black;
+    box-shadow: 5px 5px 10px #000;
+
+    &-info {
+        background-color: #e056fd;
+    }
+
+    &:active {
+
+        transform: scale(0.92);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+.footer-content {
+    text-align: center;
+    margin: 20px;
+    width: 100%;
+}
+
+.user-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.user-card {
+    padding: 20px;
+    width: fit-content;
+    min-height: 300px;
+    background-color: #60a3bc;
+    margin: 20px;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 10px;
+
+    &-top {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        & > img {
+            border-radius: 10px;
+            box-shadow: 6px 6px 8px #000;
+            border: 1px solid #000;
+        }
+    }
+
+    &-title {
+        font-size: 36px;
+        padding: 10px;
+        font-family: $fontFamily;
+    }
+
+}
