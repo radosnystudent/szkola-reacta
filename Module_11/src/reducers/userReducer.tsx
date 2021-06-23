@@ -5,7 +5,8 @@ export type Actions =
     | {type: "FETCH_USERS_REQUEST";}
     | {type: "FETCH_USERS_SUCCESS"; payload: {}}
     | {type: "FETCH_USERS_FAILURE"; payload: string}
-    | {type: "FETCH_USERS_RESET"}
+    | {type: "FETCH_USERS_RESET";}
+    | {type: "FETCH_USERS_ADD_NEW_USER"; payload: {}}
 
 interface userInitialState {
     loading: boolean,
@@ -44,6 +45,12 @@ const usersReducer: Reducer = (state:State = initialState, action: Actions): Sta
         case "FETCH_USERS_RESET":
             return {
                 ...initialState
+            }
+        case "FETCH_USERS_ADD_NEW_USER":
+            return {
+                ...state,
+                loading: false,
+                users: [...state.users, action.payload]
             }
         default:
             return {

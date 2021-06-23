@@ -1,6 +1,6 @@
 @import url("http://fonts.googleapis.com/css?family=Akaya+Telivigala&subset=latin,latin-ext");
 
-$fontFamily: 'Akaya Telivigala', sans-serif;
+$fontFamily: "Akaya Telivigala", sans-serif;
 
 .App {
     display: flex;
@@ -11,7 +11,8 @@ $fontFamily: 'Akaya Telivigala', sans-serif;
     min-height: 100vh;
     background-color: #30336b;
     width: 100%;
-    // 
+    overflow: hidden;
+    //
 }
 
 .page-title {
@@ -26,6 +27,7 @@ $fontFamily: 'Akaya Telivigala', sans-serif;
     font-weight: bold;
     font-size: 24px;
 
+    margin: 20px;
     padding: 10px;
     border-radius: 10px;
     border: 4px solid black;
@@ -35,14 +37,32 @@ $fontFamily: 'Akaya Telivigala', sans-serif;
         background-color: #e056fd;
     }
 
-    &:active {
+    &-info:hover {
+        background-color: rgba(224, 86, 253, 0.4);
+    }
 
+    &-action {
+        background-color: rgba(56, 173, 169, 1);
+    }
+
+    &-action:hover {
+        background-color: rgba(7, 153, 146, 0.5);
+    }
+
+    &:active {
         transform: scale(0.92);
     }
 
     &:focus {
         outline: none;
     }
+}
+
+.homepage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .user-container {
@@ -52,8 +72,8 @@ $fontFamily: 'Akaya Telivigala', sans-serif;
     flex-wrap: wrap;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
 }
-
 
 .footer-content {
     text-align: center;
@@ -83,7 +103,7 @@ $fontFamily: 'Akaya Telivigala', sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-    
+
         & > img {
             border-radius: 10px;
             box-shadow: 6px 6px 8px #000;
@@ -96,5 +116,34 @@ $fontFamily: 'Akaya Telivigala', sans-serif;
         padding: 10px;
         font-family: $fontFamily;
     }
+}
 
+.messages-container {
+    margin: 0;
+    margin-top: 140px;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    bottom: 0;
+
+    &-info {
+        background-color: #0652dd;
+    }
+
+    &-warning {
+        background-color: #f79f1f;
+    }
+
+    &-danger {
+        background-color: #ea2027;
+    }
 }
