@@ -7,7 +7,7 @@ import Button from "../components/Button";
 import { getUsers, resetUsers, addUser } from "../actions/userActions";
 import { addMessage } from "../actions/messageActions";
 
-const Homescreen: React.FC = () => {
+const HomeScreen: React.FC = () => {
     const dispatch = useDispatch();
 
     const history = useHistory();
@@ -34,11 +34,18 @@ const Homescreen: React.FC = () => {
     return (
         <div className="homepage-container">
             <PageTitle title="Homepage" />
-            <Button
-                label="Przejdź do listy użytkowników"
-                variant="info"
-                onClick={() => history.push("/users")}
-            />
+            <div className="nav-buttons">
+                <Button
+                    label="Przejdź do listy użytkowników"
+                    variant="info"
+                    onClick={() => history.push("/users")}
+                />
+                <Button
+                    label="Przejdź do formularza"
+                    variant="info"
+                    onClick={() => history.push("/contactform")}
+                />
+            </div>
             <Button
                 label="Pobierz użytkowników"
                 variant="action"
@@ -58,4 +65,4 @@ const Homescreen: React.FC = () => {
     );
 };
 
-export default Homescreen;
+export default HomeScreen;

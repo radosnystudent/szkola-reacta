@@ -58,11 +58,24 @@ $fontFamily: "Akaya Telivigala", sans-serif;
     }
 }
 
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
 .homepage-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    & > .nav-buttons {
+        display: flex;
+    }
 }
 
 .user-container {
@@ -145,5 +158,38 @@ $fontFamily: "Akaya Telivigala", sans-serif;
 
     &-danger {
         background-color: #ea2027;
+    }
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    & > button {
+        text-align: center;
+        width: 50%;
+    }
+}
+
+.form-component {
+    margin: 10px;
+
+    & > label {
+        padding: 10px;
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 24px;
+        font-family: $fontFamily;
+    }
+
+    & > input {
+        padding: 5px;
+        font-weight: bold;
+    }
+
+    & > input:focus {
+        color: #fff;
+        background-color: #000;
     }
 }

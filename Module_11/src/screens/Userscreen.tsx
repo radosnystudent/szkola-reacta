@@ -8,7 +8,7 @@ import UserCard from "../components/UserCard";
 import { userDataI } from "../interfaces/userData";
 import Button from "../components/Button";
 
-const Userscreen: React.FC = () => {
+const UserScreen: React.FC = () => {
     const history = useHistory();
     const { loading, errors, users } = useSelector<RootState, UserReducer>(
         (state) => state.users
@@ -39,4 +39,4 @@ const Userscreen: React.FC = () => {
     );
 };
 
-export default Userscreen;
+export default UserScreen;

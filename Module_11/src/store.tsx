@@ -4,6 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { persistReducer, persistStore } from "redux-persist";
 import { PersistConfig } from "redux-persist/es/types";
 import storage from "redux-persist/lib/storage";
+import { reducer as formReducer } from "redux-form";
 
 import usersReducer from "./reducers/userReducer";
 import messageReducer from "./reducers/messageReducer";
@@ -11,6 +12,7 @@ import messageReducer from "./reducers/messageReducer";
 const reducer = combineReducers({
     message: messageReducer,
     users: usersReducer,
+    form: formReducer,
 });
 
 const initialStates: {} = {
