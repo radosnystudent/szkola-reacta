@@ -27,7 +27,9 @@ const ContactForm: React.FC = () => {
                 }
             );
 
-            dispatch(addMessage("info", "Wiadomość wysłana"));
+            if (response.status === 200) {
+                dispatch(addMessage("info", "Wiadomość wysłana"));
+            }
         } catch (error) {
             dispatch(addMessage("danger", "Wiadomość nie została wysłana"));
         }

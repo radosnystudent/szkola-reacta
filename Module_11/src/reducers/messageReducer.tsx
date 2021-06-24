@@ -11,13 +11,13 @@ export type Actions =
     | { type: "MESSAGE_RESET" };
 
 interface messageInitialState {
-    messages: {}[];
+    messages: { type: string; text: string }[];
 }
 
 type State = messageInitialState;
 
 const initialState: messageInitialState = {
-    messages: [],
+    messages: [{ type: "", text: "" }],
 };
 
 const messageReducer: Reducer = (
@@ -31,10 +31,8 @@ const messageReducer: Reducer = (
                 messages: [...state.messages, action.payload],
             };
         case "MESSAGE_HIDE":
-            let msgTempHide = [...state.messages].splice(
-                action.payload.index,
-                1
-            );
+            let msgTempHide = [...state.messages];
+            msgTempHide.splice(action.payload.index, 1);
             return {
                 ...state,
                 messages: msgTempHide,
@@ -45,7 +43,7 @@ const messageReducer: Reducer = (
             if (msgTempShift) {
                 return {
                     ...state,
-                    messages: [msgTempShift],
+                    messages: msgTempShift,
                 };
             }
             return {

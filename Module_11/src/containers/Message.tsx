@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import MessageItem from "../components/MessageItem";
 
 import { MessageReducer } from "../reducers/messageReducer";
@@ -16,6 +16,8 @@ const Message: React.FC = () => {
         (state) => state.message
     );
 
+    const dispatch = useDispatch();
+
     return (
         <div className="messages-container">
             {messages &&
@@ -24,7 +26,7 @@ const Message: React.FC = () => {
                         <MessageItem
                             text={message.text}
                             type={message.type}
-                            onClose={() => hideMessage(idx)}
+                            onClose={() => dispatch(hideMessage(idx))}
                             key={`${message.type}_${idx}`}
                         />
                     );

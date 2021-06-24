@@ -7,7 +7,14 @@ interface Props {
 }
 
 const MessageItem: React.FC<Props> = ({ type, text, onClose }) => {
-    return <div className={`message message-${type}`}>{text}</div>;
+    return (
+        <div className={`message message-${type}`}>
+            <span>{text}</span>
+            <span className="close" onClick={onClose}>
+                x
+            </span>
+        </div>
+    );
 };
 
 export default MessageItem;

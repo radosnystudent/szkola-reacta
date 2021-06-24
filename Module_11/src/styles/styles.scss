@@ -147,17 +147,28 @@ $fontFamily: "Akaya Telivigala", sans-serif;
     text-align: center;
     font-weight: bold;
     bottom: 0;
+    position: relative;
 
     &-info {
         background-color: #0652dd;
     }
 
     &-warning {
-        background-color: #f79f1f;
+        background-color: #6d214f;
     }
 
     &-danger {
         background-color: #ea2027;
+    }
+
+    & > .close {
+        position: absolute;
+        top: 0;
+        right: 2%;
+        cursor: pointer;
+        font-weight: bold;
+        color: #fff;
+        font-size: 22px;
     }
 }
 
