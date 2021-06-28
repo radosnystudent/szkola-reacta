@@ -2,7 +2,7 @@ import { Actions } from "../reducers/messageReducer";
 import { Dispatch } from "redux";
 
 export const addMessage =
-    (type: string, text: string) => (dispatch: Dispatch<Actions | Actions>) => {
+    (type: string, text: string) => (dispatch: Dispatch) => {
         dispatch({
             type: "MESSAGE_ADD",
             payload: { type, text },
@@ -14,10 +14,9 @@ export const addMessage =
         }, 2000);
     };
 
-export const hideMessage =
-    (index: number) => (dispatch: Dispatch<Actions | Actions>) => {
-        dispatch({
-            type: "MESSAGE_HIDE",
-            payload: { index },
-        });
-    };
+export const hideMessage = (index: number) => (dispatch: Dispatch) => {
+    dispatch({
+        type: "MESSAGE_HIDE",
+        payload: { index },
+    });
+};
