@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
 
-import ProductI from "../interfaces/ProductI";
+import { ProductI } from "../interfaces/ProductI";
 
 interface Props {
     product: ProductI;
@@ -13,7 +13,14 @@ const Product: React.FC<Props> = ({ product }): JSX.Element => {
     return (
         <Card className="my-3 p-3 rounded product">
             <Link to={`/product/${product._id}`}>
-                <Card.Img src={product.image} variant="top" />
+                <Card.Img
+                    src={product.image}
+                    variant="top"
+                    style={{
+                        maxWidth: "200px",
+                        maxHeight: "200px",
+                    }}
+                />
             </Link>
             <Card.Body>
                 <Link

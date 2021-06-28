@@ -1,4 +1,4 @@
-export default interface ProductI {
+export interface ProductI {
     _id: string;
     name: string;
     image: string;
@@ -9,4 +9,10 @@ export default interface ProductI {
     countInStock: number;
     rating: number;
     numReviews: number;
+}
+
+export interface CategoriesI {
+    type: string;
+    text: string;
+    _id: string;
 }
