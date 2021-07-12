@@ -18,6 +18,8 @@ import Message from "../components/Message";
 import StarRating from "../components/StarRating";
 import { ProductI } from "../interfaces/ProductI";
 import { products } from "../data/products";
+import { useEffect } from "react";
+import axios from "axios";
 
 type MatchParams = {
     id: string;
@@ -28,14 +30,15 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
 }) => {
     const productId = match.params.id;
     const [qty, setQty] = useState(1);
-    // const history = useHistory();
     const loading = false;
     const error = false;
-    // const dispatch = useDispatch();
+    const [product, setProduct] = useState<ProductI>();
 
-    const product: ProductI = products.filter(
-        (item: ProductI) => item._id === productId
-    )[0];
+    useEffect(() => {
+        axios
+            .get(`/product/${productId}`)
+            .then((res) => setProduct(res.data.data));
+    }, []);
 
     // const productDetail = useSelector((state) => state.productDetails);
     // const { loading, error, product } = productDetail;
@@ -58,7 +61,7 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
                 <Loading />
             ) : error ? (
                 <Message variant="danger">{error}</Message>
-            ) : (
+            ) : product ? (
                 <Row className="m-5">
                     <Col md={6}>
                         <Image src={product.image} alt={product.name} fluid />
@@ -164,7 +167,7 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
                         </Card>
                     </Col>
                 </Row>
-            )}
+            ) : null}
         </>
     );
 };
