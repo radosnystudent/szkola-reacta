@@ -1,7 +1,4 @@
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-}
+@import "./constants";
 
 .rating span {
     margin: 0.1rem 0.2rem;
@@ -9,4 +6,12 @@
 
 .product {
     margin: 5px;
+}
+
+a {
+    font-family: $fontArmata;
+}
+
+.navbar {
+    font-family: inherit;
 }

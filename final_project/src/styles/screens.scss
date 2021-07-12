@@ -1,3 +1,5 @@
+@import "./constants";
+
 main {
     min-height: 86.9vh;
     margin: 0;
@@ -17,6 +19,7 @@ footer {
 .homescreen-container {
     position: relative;
     overflow: hidden;
+    font-family: $fontArmata;
 
     .horizontal-line-separate {
         height: 1px;

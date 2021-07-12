@@ -34,7 +34,7 @@ const Product: React.FC<Props> = ({ product }): JSX.Element => {
                 <Card.Text as="div">
                     <StarRating
                         value={product.rating}
-                        text={`${product.numReviews} reviews`}
+                        text={`${product.numReviews} opinii`}
                     />
                 </Card.Text>
                 <Card.Text as="h3">{product.price}zł</Card.Text>

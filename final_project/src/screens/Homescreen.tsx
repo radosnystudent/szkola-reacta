@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Pagination } from "react-bootstrap";
 
-import { products } from "../data/products";
+// import { products } from "../data/products";
 
 import CategoriesNav from "../components/CategoriesNav";
 import { shuffleArray } from "../utilities/auxiliaryFunctions";
 import Product from "../components/Product";
 import { ProductI } from "../interfaces/ProductI";
+import axios from "axios";
 
 const Homescreen: React.FC = (): JSX.Element => {
     const [activePage, setActivePage] = useState(1);
     const [pagination, setPaginationItems] = useState([]);
     const [activeCategory, setActiveCategory] = useState("all");
+    const [products, setProducts] = useState<ProductI[]>([]);
     const [maxItems, setMaxItems] = useState(products.length);
 
     useEffect(() => {
-        shuffleArray(products);
-    }, []);
+        if (products.length === 0) {
+            axios.get("/products").then((res) => {
+                setProducts(res.data.data);
+                setMaxItems(res.data.data.length);
+            });
+            shuffleArray(products);
+        }
+    }, [products]);
 
     useEffect(() => {
         const items: any = [];
@@ -47,7 +55,7 @@ const Homescreen: React.FC = (): JSX.Element => {
         }
         setMaxItems(counter);
         setActivePage(1);
-    }, [activeCategory]);
+    }, [activeCategory, products]);
 
     return (
         <div className="homescreen-container">
@@ -60,23 +68,24 @@ const Homescreen: React.FC = (): JSX.Element => {
             <Row>
                 <Col className="products">
                     <Row>
-                        {products.map((product: ProductI, idx: number) => {
-                            return idx >= activePage * 10 - 10 &&
-                                idx < activePage * 10 ? (
-                                product.category === activeCategory ||
-                                activeCategory === "all" ? (
-                                    <Col
-                                        key={product._id}
-                                        sm={12}
-                                        md={6}
-                                        lg={4}
-                                        xl={3}
-                                    >
-                                        <Product product={product} />
-                                    </Col>
-                                ) : null
-                            ) : null;
-                        })}
+                        {products &&
+                            products.map((product: ProductI, idx: number) => {
+                                return idx >= activePage * 10 - 10 &&
+                                    idx < activePage * 10 ? (
+                                    product.category === activeCategory ||
+                                    activeCategory === "all" ? (
+                                        <Col
+                                            key={product._id}
+                                            sm={12}
+                                            md={6}
+                                            lg={4}
+                                            xl={3}
+                                        >
+                                            <Product product={product} />
+                                        </Col>
+                                    ) : null
+                                ) : null;
+                            })}
                     </Row>
                 </Col>
                 <div className="pagination-container">

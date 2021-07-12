@@ -9,6 +9,9 @@ import "./styles/screens.scss";
 import "./styles/components.scss";
 import "./bootstrap.min.css";
 
+const { worker } = require("./mocks/browser");
+worker.start({ onUnhandledRequest: "bypass" });
+
 ReactDOM.render(
     <React.StrictMode>
         <App />

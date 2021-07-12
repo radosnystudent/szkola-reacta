@@ -71,14 +71,14 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
                             <ListGroup.Item>
                                 <StarRating
                                     value={product.rating}
-                                    text={`${product.numReviews} reviews`}
+                                    text={`${product.numReviews} opinii`}
                                 />
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                Price: ${product.price}
+                                Cena: {product.price}zł
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                Description: ${product.description}
+                                Opis: {product.description}
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>
@@ -88,10 +88,10 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
                                 <ListGroup.Item>
                                     <Row>
                                         <Col className="product-page-section">
-                                            Price:
+                                            Cena:
                                         </Col>
                                         <Col className="product-page-section">
-                                            ${product.price}
+                                            {product.price}zł
                                         </Col>
                                     </Row>
                                 </ListGroup.Item>
@@ -102,8 +102,8 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
                                         </Col>
                                         <Col className="product-page-section">
                                             {product.countInStock > 0
-                                                ? "In stock"
-                                                : "Out of stock"}
+                                                ? "Dostępny"
+                                                : "Brak towaru"}
                                         </Col>
                                     </Row>
                                 </ListGroup.Item>
@@ -112,7 +112,7 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
                                     <ListGroup.Item>
                                         <Row>
                                             <Col className="product-page-section">
-                                                Qty
+                                                Ilość
                                             </Col>
                                             <Col className="product-page-section">
                                                 <Form.Control
@@ -157,7 +157,7 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
                                         type="button"
                                         disabled={product.countInStock === 0}
                                     >
-                                        Add to card
+                                        Dodaj do koszyka
                                     </Button>
                                 </ListGroup.Item>
                             </ListGroup>
