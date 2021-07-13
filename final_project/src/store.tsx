@@ -4,7 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 // import { persistReducer, persistStore } from "redux-persist";
 // import { PersistConfig } from "redux-persist/es/types";
 // import storage from "redux-persist/lib/storage";
-import { reducer as formReducer } from "redux-form";
+// import { reducer as formReducer } from "redux-form";
 
 import productReducer from "./reducers/productReducer";
 

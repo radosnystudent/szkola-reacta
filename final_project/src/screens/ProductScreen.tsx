@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
+import axios from "axios";
 import {
     Row,
     Col,
@@ -9,7 +10,6 @@ import {
     Button,
     Form,
 } from "react-bootstrap";
-// import { useDispatch, useSelector } from "react-redux";
 // import { useHistory } from "react-router";
 
 import Loading from "../components/Loading";
@@ -17,9 +17,6 @@ import Message from "../components/Message";
 
 import StarRating from "../components/StarRating";
 import { ProductI } from "../interfaces/ProductI";
-import { products } from "../data/products";
-import { useEffect } from "react";
-import axios from "axios";
 
 type MatchParams = {
     id: string;
@@ -38,7 +35,7 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
         axios
             .get(`/product/${productId}`)
             .then((res) => setProduct(res.data.data));
-    }, []);
+    }, [productId]);
 
     // const productDetail = useSelector((state) => state.productDetails);
     // const { loading, error, product } = productDetail;
