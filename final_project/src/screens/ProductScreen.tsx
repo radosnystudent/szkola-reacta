@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+
 import {
     Row,
     Col,
@@ -10,13 +11,14 @@ import {
     Button,
     Form,
 } from "react-bootstrap";
-// import { useHistory } from "react-router";
 
 import Loading from "../components/Loading";
 import Message from "../components/Message";
-
 import StarRating from "../components/StarRating";
-import { ProductI } from "../interfaces/ProductI";
+
+import { RootState } from "../store";
+import { ProductReducer } from "../reducers/productReducer";
+import { getProductDetails } from "../actions/productActions";
 
 type MatchParams = {
     id: string;
@@ -27,15 +29,15 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
 }) => {
     const productId = match.params.id;
     const [qty, setQty] = useState(1);
-    const loading = false;
-    const error = false;
-    const [product, setProduct] = useState<ProductI>();
+    const { product, loading, error } = useSelector<RootState, ProductReducer>(
+        (state) => state.products
+    );
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        axios
-            .get(`/product/${productId}`)
-            .then((res) => setProduct(res.data.data));
-    }, [productId]);
+        dispatch(getProductDetails(productId));
+    }, [productId, dispatch]);
 
     // const productDetail = useSelector((state) => state.productDetails);
     // const { loading, error, product } = productDetail;
@@ -51,9 +53,6 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
 
     return (
         <>
-            {/* <Link className="btn btn-dark my-3" to="/">
-                Home
-            </Link> */}
             {loading ? (
                 <Loading />
             ) : error ? (

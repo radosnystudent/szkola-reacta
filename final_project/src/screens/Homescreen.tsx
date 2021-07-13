@@ -7,7 +7,6 @@ import Loading from "../components/Loading";
 import Message from "../components/Message";
 import Product from "../components/Product";
 
-import { shuffleArray } from "../utilities/auxiliaryFunctions";
 import { fetchProducts } from "../actions/productActions";
 
 import { ProductI } from "../interfaces/ProductI";
@@ -25,13 +24,14 @@ const Homescreen: React.FC = (): JSX.Element => {
     );
 
     useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch]);
+        if (products.length === 0) {
+            dispatch(fetchProducts());
+        }
+    }, [dispatch, products]);
 
     useEffect(() => {
         if (products) {
             setMaxItems(products.length);
-            shuffleArray(products);
         }
     }, [products]);
 
