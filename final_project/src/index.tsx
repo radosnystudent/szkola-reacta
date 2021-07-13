@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import {Provider} from "redux"
+import { Provider } from "react-redux";
 
 import App from "./App";
+import store from "./store";
 
 import "./styles/index.scss";
 import "./styles/screens.scss";
@@ -13,8 +14,8 @@ const { worker } = require("./mocks/browser");
 worker.start({ onUnhandledRequest: "bypass" });
 
 ReactDOM.render(
-    <React.StrictMode>
+    <Provider store={store}>
         <App />
-    </React.StrictMode>,
+    </Provider>,
     document.getElementById("root")
 );
