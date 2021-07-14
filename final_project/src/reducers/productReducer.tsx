@@ -83,7 +83,10 @@ const productReducer: Reducer = (
                 error: action.payload,
             };
         default:
-            return initialState;
+            console.log("wat");
+            return {
+                ...initialState,
+            };
     }
 };
 

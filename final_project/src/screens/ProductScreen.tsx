@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -19,6 +19,7 @@ import StarRating from "../components/StarRating";
 import { RootState } from "../store";
 import { ProductReducer } from "../reducers/productReducer";
 import { getProductDetails } from "../actions/productActions";
+import { addToCart } from "../actions/cartActions";
 
 type MatchParams = {
     id: string;
@@ -32,24 +33,18 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
     const { product, loading, error } = useSelector<RootState, ProductReducer>(
         (state) => state.products
     );
-
+    const history = useHistory();
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getProductDetails(productId));
-    }, [productId, dispatch]);
+        // eslint-disable-next-line
+    }, [productId]);
 
-    // const productDetail = useSelector((state) => state.productDetails);
-    // const { loading, error, product } = productDetail;
-
-    // useEffect(() => {
-    //     dispatch(productDetails(match.params.id));
-    // }, [dispatch, match]);
-
-    // const addToCartHandler = () => {
-    //     dispatch(addToCart(product._id, qty));
-    //     history.push("/cart");
-    // };
+    const addToCartHandler = () => {
+        dispatch(addToCart(product._id, qty));
+        history.replace("/cart");
+    };
 
     return (
         <>
@@ -151,7 +146,7 @@ const ProductScreen: React.FC<RouteComponentProps<MatchParams>> = ({
 
                                 <ListGroup.Item>
                                     <Button
-                                        // onClick={addToCartHandler}
+                                        onClick={addToCartHandler}
                                         className="btn-block rounded"
                                         type="button"
                                         disabled={product.countInStock === 0}

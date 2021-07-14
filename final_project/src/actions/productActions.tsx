@@ -11,6 +11,7 @@ import {
     FETCH_CATEGORIES_SUCCESS,
     FETCH_CATEGORIES_FAILURE,
 } from "../constants/actions";
+
 import { shuffleArray } from "../utilities/auxiliaryFunctions";
 
 export const fetchProducts = () => async (dispatch: Dispatch) => {
@@ -42,8 +43,6 @@ export const getProductDetails =
             });
 
             const response = await axios.get(`/product/${productId}`);
-
-            console.log(response);
 
             dispatch({
                 type: GET_PRODUCT_DETAILS_SUCCESS,

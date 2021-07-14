@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import CartScreen from "./screens/CartScreen";
 import ProductScreen from "./screens/ProductScreen";
 import Homescreen from "./screens/Homescreen";
 import Header from "./components/Header";
@@ -21,6 +22,7 @@ const App: React.FC = (): JSX.Element => {
                         }}
                         fluid
                     >
+                        <Route path="/cart" component={CartScreen} />
                         <Route path="/product/:id" component={ProductScreen} />
                         <Route path="/" exact component={Homescreen} />
                     </Container>

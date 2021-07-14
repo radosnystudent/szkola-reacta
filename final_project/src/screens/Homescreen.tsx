@@ -7,7 +7,7 @@ import Loading from "../components/Loading";
 import Message from "../components/Message";
 import Product from "../components/Product";
 
-import { fetchProducts } from "../actions/productActions";
+import { fetchProducts, getCategories } from "../actions/productActions";
 
 import { ProductI } from "../interfaces/ProductI";
 import { RootState } from "../store";
@@ -26,8 +26,10 @@ const Homescreen: React.FC = (): JSX.Element => {
     useEffect(() => {
         if (products.length === 0) {
             dispatch(fetchProducts());
+            dispatch(getCategories());
         }
-    }, [dispatch, products]);
+        // eslint-disable-next-line
+    }, [products]);
 
     useEffect(() => {
         if (products) {

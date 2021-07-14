@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import { CategoriesI } from "../interfaces/ProductI";
 import Loading from "./Loading";
 import Message from "./Message";
 import { RootState } from "../store";
 import { ProductReducer } from "../reducers/productReducer";
-import { getCategories } from "../actions/productActions";
+// import { getCategories } from "../actions/productActions";
 
 interface Props {
     activeCategory: string;
@@ -23,11 +23,11 @@ const CategoriesNav: React.FC<Props> = ({
         ProductReducer
     >((state) => state.products);
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(getCategories());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(getCategories());
+    // }, [dispatch]);
 
     return (
         <>
